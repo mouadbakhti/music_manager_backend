@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Track {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     private String title;
     private String artist;
@@ -23,18 +23,18 @@ public class Track {
 
     public Track() {
     }
-    public Track(Long id, String title, String artist, int duration) {
+    public Track(int id, String title, String artist, int duration) {
         this.id = id;
         this.title = title;
         this.artist = artist;
         this.duration = duration;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
