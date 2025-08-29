@@ -23,11 +23,12 @@ public class Track {
 
     public Track() {
     }
-    public Track(int id, String title, String artist, int duration) {
+    public Track(int id, String title, String artist, int duration, String coverUrl) {
         this.id = id;
         this.title = title;
         this.artist = artist;
         this.duration = duration;
+        this.coverUrl = coverUrl;
     }
 
     public int getId() {

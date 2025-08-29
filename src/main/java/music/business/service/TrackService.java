@@ -15,9 +15,9 @@ public class TrackService {
     private List<Track> tracks;
 
     public TrackService() {
-        this.testTrack1 = new Track(1, "Stairway to Heaven", "Led Zeppelin", 480);
-        this.testTrack2 = new Track(2, "Highway To Hell", "AC/DC", 250);
-        this.testTrack3 = new Track(3, "Comfortably Numb", "Pink Floyd", 360);
+        this.testTrack1 = new Track(1, "Stairway to Heaven", "Led Zeppelin", 480, "https://cdn-images.dzcdn.net/images/cover/9e663c64680899afd85f72af607d549e/0x1900-000000-80-0-0.jpg");
+        this.testTrack2 = new Track(2, "Highway To Hell", "AC/DC", 250, "https://storage.highresaudio.com/web/imgcache/27b2a553da34ef3aa22aee94b4a38670/zii3x4-highwaytoh-master_500x500.jpg");
+        this.testTrack3 = new Track(3, "Comfortably Numb", "Pink Floyd", 360, "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*8FkvzbSdSJ4HNxtuZo5kLg.jpeg");
 
         this.tracks = new ArrayList<>();
         tracks.add(testTrack1);
