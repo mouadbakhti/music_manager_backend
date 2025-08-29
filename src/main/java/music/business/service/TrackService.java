@@ -41,4 +41,24 @@ public class TrackService {
     public void addTrack(Track track) {
         tracks.add(track);
     }
+
+    public void deleteTrack(Long id) {
+        tracks.removeIf(track -> track.getId() == id);
+    }
+
+    public Track updateTrack(@PathVariable Long id, Track updatedTrack) {
+        for (Track track : tracks) {
+            if (track.getId() == id) {
+                track.setTitle(updatedTrack.getTitle());
+                track.setArtist(updatedTrack.getArtist());
+                track.setAlbum(updatedTrack.getAlbum());
+                track.setDuration(updatedTrack.getDuration());
+                track.setGenre(updatedTrack.getGenre());
+                track.setReleaseDate(updatedTrack.getReleaseDate());
+                track.setCoverUrl(updatedTrack.getCoverUrl());
+                return track;
+            }
+        }
+        return null;
+    }
 }
