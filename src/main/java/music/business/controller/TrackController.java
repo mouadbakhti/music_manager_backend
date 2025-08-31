@@ -8,35 +8,36 @@ import java.util.List;
 
 @RestController
 //@CrossOrigin("*")
+@RequestMapping("/api")
 public class TrackController {
-    private TrackService trackService;
+    private final TrackService trackService;
 
     public TrackController(TrackService ts) {
         this.trackService = ts;
     }
 
-    @GetMapping("/api/track/{id}")
+    @GetMapping("/track/{id}")
     public Track getTrackDetails(@PathVariable Long id) {
         return trackService.getTrackDetails(id);
     }
 
-    @GetMapping("/api/tracks")
+    @GetMapping("/tracks")
     public List<Track> getAllTracks() {
         return trackService.getAllTracks();
     }
 
-    @PostMapping("/api/track")
+    @PostMapping("/track")
     public Track addTrack(@RequestBody Track track) {
         trackService.addTrack(track);
         return track;
     }
 
-    @DeleteMapping("/api/track/{id}")
+    @DeleteMapping("/track/{id}")
     public void deleteTrack(@PathVariable Long id) {
         trackService.deleteTrack(id);
     }
 
-    @PutMapping("/api/track/{id}")
+    @PutMapping("/track/{id}")
     public Track updateTrack(@PathVariable Long id, @RequestBody Track updatedTrack) {
         return this.trackService.updateTrack(id, updatedTrack);
     }
