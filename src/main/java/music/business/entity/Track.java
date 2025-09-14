@@ -1,9 +1,14 @@
 package music.business.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "tracks")
 public class Track {
@@ -18,6 +23,11 @@ public class Track {
     private String genre;
     private LocalDate releaseDate;
     private String coverUrl;
+
+    @ManyToOne
+    @JoinColumn(name = "campaign_id")
+    @JsonBackReference
+    private Campaign campaign;
 
     public Track() {
     }
@@ -92,4 +102,13 @@ public class Track {
     public void setCoverUrl(String coverUrl) {
         this.coverUrl = coverUrl;
     }
+
+    public Campaign getCampaign() {
+        return campaign;
+    }
+
+    public void setCampaign(Campaign campaign) {
+        this.campaign = campaign;
+    }
+
 }
